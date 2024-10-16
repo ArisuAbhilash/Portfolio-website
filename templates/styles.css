@@ -187,4 +187,42 @@ button:nth-child(2):hover{
     inset 0 0 4rem #3877ff;
 
 }
+.hamburger {
+    display: none; /* Initially hide the hamburger menu */
+    cursor: pointer;
+    position: absolute; /* Position it absolutely */
+    top: 1rem; /* Adjust the top position */
+    right: 1rem; /* Align it to the right */
+}
 
+.navlist {
+    display: flex; /* Display flex for larger screens */
+    gap: 3.5rem;
+}
+
+@media (max-width:1233px) {
+    .navlist {
+        display: none; /* Hide navlist by default on small screens */
+        flex-direction: column; /* Stack items vertically */
+        position: absolute; /* Position it absolutely */
+        background-color: transparent; /* Background color */
+        top: 15vh; /* Place it below the navbar */
+        right: 0; /* Align it to the right */
+        width: 100%; /* Full width */
+        z-index: 1000; /* Ensure it appears above other elements */
+        height: 0;
+        padding-left: 500px;
+        padding-top: 6rem;
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger icon on small screens */
+        font-size: 2rem; /* Make the icon larger */
+        color: #3877ff; /* Set icon color */
+        margin: 1rem; /* Add some margin */
+    }
+
+    .navlist.active {
+        display: flex; /* Show navlist when active */
+    }
+}
