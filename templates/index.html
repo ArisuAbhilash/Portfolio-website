@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="portfolio-container">
+        <div class="hamburger" id="hamburger">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="navlist" id="navlist">
+            <li><a href="{{ url_for('home') }}" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="left-container">
+            <div class="icons">
+                <a href="https://www.linkedin.com/in/abhilash-maurya-365a941b8" target="_blank">
+                    <i class="fa-brands fa-linkedin"></i></a>
+
+                <i class="fa-brands fa-square-facebook"></i>
+
+
+
+                <a href="https://github.com/ArisuAbhilash" target="_blank">
+                    <i class="fa-brands fa-square-github"></i></a>
+            </div>
+
+            <div class="content">
+                <p class="intro">Hi! I Am <span>Abhilash Maurya</A></span></p>
+                <h1> Python Developer </h1>
+                <!--<p class="details">Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br>Iusto, expedita ipsa modi eius
+          dolorem praesentium consectetur, <br>rem doloremque fugit soluta sint odio deserunt adipisci <br>magni alias
+          aliquam repellendus voluptatibus numquam.</p> -->
+                <div class="btn-container">
+                    <button> Hire Me</button>
+                    <button> View Project</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-container"></div>
+
+        <div class="design">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+
+</body>
+
+</html>

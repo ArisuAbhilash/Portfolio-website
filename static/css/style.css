@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
+}
+
+.portfolio-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+
+}
+
+.navlist {
+    display: flex;
+    gap: 3.5rem;
+    height: 15vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+.navlist li {
+    list-style: none;
+}
+
+.navlist li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #fff;
+    position: relative;
+
+}
+
+.navlist li a::after,
+.navlist .active::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: .1rem;
+    left: 0;
+    bottom: -1px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+
+.navlist li a:hover::after,
+.navlist .active::after {
+    transform: scaleX(1);
+}
+
+.left-container,
+.right-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+
+}
+
+.left-container {
+    background-color: #262525;
+    width: 70%;
+    padding-left: 3rem;
+}
+
+.right-container {
+    background: linear-gradient(-45deg, #3877ff, #262525 70%);
+    width: 30%;
+}
+
+
+
+.icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.icons .fa-brands {
+    color: #bbb;
+    font-size: 1.7rem;
+}
+
+.content {
+    margin-left: 4rem;
+
+}
+
+
+.content .intro {
+    font-size: 1.5rem;
+    color: #fff;
+
+}
+
+.content .intro span {
+    color: #5db9ee;
+}
+
+.content h1 {
+    font-size: 4rem;
+    color: #5DB9EE;
+}
+
+
+.content .detail {
+    font-size: 1.1rem;
+    color: #fff;
+    max-width: 38rem;
+    margin: 1.1rem 0 3rem 0;
+    line-height: 1.8rem;
+}
+
+
+.btn-container button {
+    border: 0.1rem solid #5db9ee;
+    font-size: 1.1rem;
+    padding: .7rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    margin-top: 0.8rem;
+    transition: .5s ease;
+}
+
+button:nth-child(1) {
+    background-color: #5db9ee;
+    color: #262525;
+}
+
+
+button:nth-child(2) {
+    background: transparent;
+    color: #5DB9EE;
+    margin-left: 2rem;
+}
+
+button:nth-child(1):hover {
+    background: transparent;
+    color: #5DB9EE;
+}
+
+button:nth-child(2):hover {
+    background: #5DB9EE;
+    color: #262525;
+}
+
+
+.icons .fa-brands:hover {
+    cursor: pointer;
+    background: linear-gradient(#fff, #3877ff);
+    -webkit-text-fill-color: transparent;
+}
+
+.design .circle {
+    aspect-ratio: 1;
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+}
+
+
+.circle:nth-child(1) {
+    background: linear-gradient(90deg, transparent 50%, #262525 -50%);
+    width: 30rem;
+}
+
+.circle:nth-child(2) {
+    width: 22rem;
+    background-image: url("/static/images/profile.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: 1rem solid white;
+    box-shadow:
+        0 0 1rem #fff,
+        inset 0 0 1rem #fff,
+        0 0 2rem #3877ff,
+        inset 0 0 2rem #3877ff,
+        0 0 4rem #3877ff,
+        inset 0 0 4rem #3877ff;
+
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    /* Align it to the right */
+}
+
+.navlist {
+    display: flex;
+    gap: 3.5rem;
+}
+
+@media (max-width:1313px) {
+
+
+    .portfolio-container {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+
+    }    
+
+    .left-container {
+        background-color: #262525;
+        width: 100%;
+        padding-left: 3rem;
+    }
+    
+    .right-container {
+        background: linear-gradient(-45deg, #3877ff, #262525 70%);
+        width: 0%;
+    }
+    
+    .design .circle {
+        aspect-ratio: 1;
+        position: absolute;
+        border-radius: 50%;
+        top: 50%;
+        left: 80%;
+        
+    }
+    
+    .circle:nth-child(1) {
+        background: linear-gradient(90deg, transparent 50%, #262525 -50%);
+        width: 0rem;
+    }
+    
+    .circle:nth-child(2) {
+        width: 22rem;
+        background-image: url("image.jpg");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border: 1rem solid white;
+        box-shadow:
+            0 0 1rem #fff,
+            inset 0 0 1rem #fff,
+            0 0 2rem #3877ff,
+            inset 0 0 2rem #3877ff,
+            0 0 4rem #3877ff,
+            inset 0 0 4rem #3877ff;
+    
+    }   
+
+}
+
+@media (max-width: 1047px) {
+ 
+
+    .navlist {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: #262525;
+        top: 0;
+        left: -100%; 
+        width: 100%;
+        height: 100vh; /* Full height */
+        z-index: 1000;
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        transition: left 0.5s ease; /* Add smooth transition for sliding */
+    }
+
+    
+    .navlist.active {
+        left: 0; /* Slide it into view from the left */
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+        display: block;
+        font-size: 2rem;
+        color: #e47908;
+        margin-top: 10px;
+		margin-left: 20px;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        cursor: pointer;
+        z-index: 1001; /* Make sure it stays above the navlist */
+    }
+
+    /* Menu items alignment */
+    .navlist li {
+        list-style: none;
+        margin: 1.rem 0;
+    }
+
+    .navlist li a {
+        color: #ffffff;
+        font-size: 1.5rem;
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    
+    .right-container {
+        order: 1;
+        width: 0%;
+        height: 0;
+        background: linear-gradient(-45deg, #3877ff, #262525 70%);
+        padding: 0rem;
+    }
+
+
+    
+    .portfolio-container{
+        align-items: center;
+        width: 100%;
+    }
+
+    .left-container {
+        order: 3;
+        width: 100%;
+        min-height: 150vh;
+        padding-right: 40px;
+        background-color: #262525;
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing:content-box;
+    }
+
+    .icons {
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        position:absolute;
+        margin-bottom: 18.75rem;
+    }
+
+    /* Content inside left container */
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centers vertically */
+        align-items: center; /* Centers horizontally */
+        text-align: center;
+        position: absolute; 
+        margin-left: 0px;
+    }
+
+
+    .content .intro {
+        font-size: 1.5rem; /* Adjust the font size */
+        color: #fff; /* Set text color */
+        font-weight: 500; /* Medium font weight */
+         /* Add spacing below */
+
+    }
+    
+    .content .intro span {
+        color: #5db9ee; /* Highlight your name with a different color */
+        font-weight: 400; /* Make it bold */
+    }
+    
+
+    .content h1 {
+        font-size: 2rem;
+    }
+
+
+    /* Circle design positioning */
+    .design .circle {
+        aspect-ratio: 1;
+        position: absolute;
+        border-radius: 50%;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-color: rgba(56, 119, 255, 0.5);
+    }
+
+    /* Adjust margins and paddings for smaller screens */
+    
+    
+
+    .btn-container button {
+        margin-top: 1rem;
+    }
+
+    /* Circles resizing for small screens */
+    .circle:nth-child(1),
+    .circle:nth-child(2) {
+        width: 15rem;
+    }
+}
