@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skills</title>
+
+    <!-- Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/project.css') }}"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Boxicons for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+    />
+
+    <!-- Meta Description for SEO -->
+    <meta
+      name="description"
+      content="Learn more about Abhilash Maurya, a passionate developer with expertise in web development, cloud computing, and project management."
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <ul class="navlist" id="navlist">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}">About</a></li>
+      <li><a href="{{ url_for('skills') }}">Skills</a></li>
+      <li><a href="{{ url_for ('project') }}" class="active">Project</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+
+    <div class="project-section">
+      <div class="main-text" id="project">
+        <h2>Latest <span>Project</span></h2>
+
+        <div class="project-content">
+          <div class="row">
+            <img src="{{ url_for('static', filename='images/image1.jpg') }}" />
+            <div class="layer">
+              <h5>Python development</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus quas vitae consequuntur! Adipisci aliquam expedita
+                voluptatibus cum dolorum in odit provident, nemo deleniti. Ea
+                eaque, dolores ipsam cupiditate non dicta!
+              </p>
+
+              <a href="#"
+                ><i class="bx bx-link-external" style="color: aliceblue"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="row">
+            <img src="{{ url_for('static', filename='images/image1.jpg') }}" />
+            <div class="layer">
+              <h5>Python development</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus quas vitae consequuntur! Adipisci aliquam expedita
+                voluptatibus cum dolorum in odit provident, nemo deleniti. Ea
+                eaque, dolores ipsam cupiditate non dicta!
+              </p>
+
+              <a href="#"
+                ><i class="bx bx-link-external" style="color: aliceblue"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="row">
+            <img src="{{ url_for('static', filename='images/image1.jpg') }}" />
+            <div class="layer">
+              <h5>Python development</h5>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus quas vitae consequuntur! Adipisci aliquam expedita
+                voluptatibus cum dolorum in odit provident, nemo deleniti. Ea
+                eaque, dolores ipsam cupiditate non dicta!
+              </p>
+
+              <a href="#"
+                ><i class="bx bx-link-external" style="color: aliceblue"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.getElementById("hamburger");
+        const navlist = document.getElementById("navlist");
+
+        hamburger.addEventListener("click", function () {
+          navlist.classList.toggle("active"); // Toggle the 'active' class on the navlist
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,503 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+body{
+	width: 100%;
+	min-height: 100vh;
+	background-color:#262525;
+	color: white;
+}
+
+.navlist {
+    display: flex;
+    gap: 3.5rem;
+    height: 15vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+}
+
+.navlist li {
+    list-style: none;
+}
+
+.navlist li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    color: #fff;
+    position: relative;
+
+}
+
+.navlist li a::after,
+.navlist .active::after {
+    content: "";
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    height: .1rem;
+    left: 0;
+    bottom: -1px;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+
+
+.navlist li a:hover::after,
+.navlist .active::after {
+    transform: scaleX(1);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    /* Align it to the right */
+}
+
+.navlist {
+    display: flex;
+    gap: 3.5rem;
+}
+
+
+.skills-section {
+    display: flex;
+    justify-content: space-between; /* Places container1 on left and container2 on right */
+    align-items: center;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    
+}
+
+.container1 {
+    width: 50%;
+    padding-left: 3rem;
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    justify-content: flex-start; /* Move content to the top */
+    margin-top: 16rem;
+
+}
+.container2 {
+    width: 50%;
+    padding-right: 3rem;
+    flex-direction:column; /* Align items in a column */
+    justify-content: flex-start; /* Move content to the top */
+    margin-top: 16rem;
+    flex-wrap: wrap;
+    
+
+}
+
+
+
+.container1, .container2{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position:relative;
+}
+
+.heading1 { 
+
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-thickness: 5px;
+    margin-bottom: 50px;
+}
+
+.Technical-bars {
+    width: 60%; /* Increase width */
+    max-width: 900px; /* Prevent bars from stretching too much */
+}
+
+.bar {
+    font-size: 23px;
+}
+
+.Technical-bars .bar {
+    margin: 40px 0;
+}
+
+.Technical-bars .bar:first-child {
+    margin-top: 0px;
+}
+
+.Technical-bars .bar:last-child {
+    margin-bottom: 0px;
+}
+
+.Technical-bars .bar .info {
+    margin-bottom: 5px;
+}
+
+.Technical-bars .bar .info span {
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+
+.Technical-bars .bar .progress-line {
+    position: relative;
+    border-radius: 10px;
+    width: 100%;
+    height: 5px;
+    background-color: #d8c9c9;
+    animation: animate 1s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+@keyframes animate {
+    0%{
+        transform: scaleX(0);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+
+.Technical-bars .bar .progress-line span {
+    height: 100%;
+    background-color: #0ef;
+    position: absolute;
+    border-radius: 10px;
+    animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
+    transform: scaleX(0);
+    transform-origin: left;
+    
+}
+
+.progress-line.html span {
+    width: 90%;
+}
+
+.progress-line.css span {
+    width: 85%;
+}
+
+.progress-line.javascript span {
+    width: 75%;
+}
+
+.progress-line.python span {
+    width: 80%;
+}
+
+.progress-line.flask span {
+    width: 70%;
+}
+
+.progress-line span::after {
+    position: absolute;
+    padding: 1px 8px;
+    background-color: #070707;
+    color: #fff;
+    border-radius: 3px;
+    font-size: 14px;
+    top: -30px;
+    right: -20px;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+
+.progress-line.html span::after {
+    content: "90%";
+}
+
+.progress-line.css span::after {
+    content: "85%";
+}
+
+.progress-line.javascript span::after {
+    content: "75%";
+}
+
+.progress-line.python span::after {
+    content: "80%";
+}
+
+.progress-line.flask span::after {
+    content: "70%";
+}
+
+.progress-line span::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0px;
+    border-right-width: 0px;
+    border-top-color: #050505;
+    top: -10px;
+    right: 0;
+    animation: showText 0.5s 1.5s linear forwards;
+    opacity: 0;
+}
+
+@keyframes showText {
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+
+.radial-bars {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 20px;
+} 
+
+.radial-bars .radial-bar{
+    width: 45%;
+    height: 170px;
+    margin-bottom: 10px;
+    position: relative;
+    display:flex;
+
+   
+}
+
+.radial-bars .radial-bar svg {
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 140px;
+    height: 150px;
+
+}
+
+.radial-bars .radial-bar .progress-bar {
+    stroke-width: 10;
+    stop-color: rgb(240, 235, 235);
+    fill: transparent;
+    stroke-dasharray: 502;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    animation: animate-bar 1s linear forwards;
+}
+
+.progress-bar {
+    stroke-width: 10;
+    stroke: rgb(235, 227, 227);
+    fill: transparent;
+}
+
+
+@keyframes animate-bar {
+    100% {
+        stroke-dashoffset: -1;
+    }
+}
+
+.path {
+    fill:none;
+    stroke: rgb(7, 180, 168); /* Active progress color */
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 502; /* Full circumference */
+    stroke-dashoffset: 502; /* Start as empty */
+    animation: animate-progress 1s linear forwards;
+    opacity: 1;
+    
+}
+
+
+
+.path-1 {
+    animation: animate-path1 1s 1s linear forwards;
+}
+
+.path-2 {
+    animation: animate-path2 1s 1s linear forwards;
+}
+
+.path-3 {
+    animation: animate-path3 1s 1s linear forwards;
+}
+
+.path-4 {
+    animation: animate-path4 1s 1s linear forwards;
+}
+
+
+
+@keyframes animate-path1 {
+    100% {
+        stroke-dashoffset: 63;;
+    }
+}
+
+@keyframes animate-path2 {
+    100% {
+        stroke-dashoffset: 31;;
+    }
+}
+
+@keyframes animate-path3 {
+    100% {
+        stroke-dashoffset: 125;;
+    }
+}
+
+@keyframes animate-path4 {
+    100% {
+        stroke-dashoffset: 75;;
+    }
+}
+
+
+
+.radial-bar .percentage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 1s 1s linear forwards;
+    opacity: 0;
+}
+
+
+.radial-bar .text {
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-50%);
+    font-size: 17px;
+    font-weight: 500;
+    animation: showText 0.5s 1s linear forwards;
+    opacity: 0;
+}
+
+
+
+
+
+@media(max-width: 1047px){
+
+	.navlist {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: #262525;
+        top: 0;
+        left: -100%; 
+        width: 100%;
+        height: 100vh; /* Full height */
+        z-index: 1000;
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        transition: left 0.5s ease; /* Add smooth transition for sliding */
+    }
+
+    
+    .navlist.active {
+        left: 0; /* Slide it into view from the left */
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+        display: block;
+        font-size: 2rem;
+        color: #e47908;
+        margin-top: 10px;
+		margin-left: 20px;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        cursor: pointer;
+        z-index: 1001; /* Make sure it stays above the navlist */
+    }
+
+    /* Menu items alignment */
+    .navlist li {
+        list-style: none;
+        margin: 1.rem 0;
+    }
+
+    .navlist li a {
+        color: #ffffff;
+        font-size: 1.5rem;
+        text-decoration: none;
+        text-align: center;
+    }
+    
+
+    .skills-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container1, .container2 {
+        width: 100%;
+        padding: 1rem;
+    
+    }
+
+    .container1{
+        margin-top:55px;
+    }
+
+    .container2{
+        margin-top: 20px;
+
+    }
+
+    .radial-bars .radial-bar {
+        width: 100px;
+        height: 100px;
+    }
+
+}
+
+ 
+    
+@media (max-width:1200px) {
+    .skills-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container1, .container2 {
+        width: 100%;
+        padding: 1rem;
+    
+    }
+
+    .container1{
+        margin-top:80px;
+    }
+
+    .container2{
+        margin-top: 20px;
+
+    }
+
+    .radial-bars .radial-bar {
+        width: 100px;
+        height: 100px;
+    }
+    
+
+}

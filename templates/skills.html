@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skills</title>
+
+    <!-- Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/skills.css') }}"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- Boxicons for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
+    />
+
+    <!-- Meta Description for SEO -->
+    <meta
+      name="description"
+      content="Learn more about Abhilash Maurya, a passionate developer with expertise in web development, cloud computing, and project management."
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <ul class="navlist" id="navlist">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}">About</a></li>
+      <li><a href="{{ url_for('skills') }}" class="active">Skills</a></li>
+      <li><a href="{{ url_for ('project') }}">Project</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+    <div class="skills-section">
+      <div class="container1" id="skills">
+        <h1 class="heading1">Technical Skills</h1>
+        <div class="Technical-bars">
+          <div class="bar">
+            <i class="bx bxl-html5" style="color: #0fe1be"></i>
+            <div class="info"><span>HTML</span></div>
+            <div class="progress-line html"><span data-width="90"></span></div>
+          </div>
+          <div class="bar">
+            <i class="bx bxl-css3" style="color: #0fe1be"></i>
+            <div class="info"><span>CSS</span></div>
+            <div class="progress-line css"><span data-width="85"></span></div>
+          </div>
+          <div class="bar">
+            <i class="bx bxl-javascript" style="color: #0fe1be"></i>
+            <div class="info"><span>JavaScript</span></div>
+            <div class="progress-line javascript">
+              <span data-width="75"></span>
+            </div>
+          </div>
+          <div class="bar">
+            <i class="bx bxl-python" style="color: #0fe1be"></i>
+            <div class="info"><span>Python</span></div>
+            <div class="progress-line python">
+              <span data-width="80"></span>
+            </div>
+          </div>
+          <div class="bar">
+            <i class="bx bxl-flask" style="color: #0fe1be"></i>
+            <div class="info"><span>Flask</span></div>
+            <div class="progress-line flask"><span data-width="70"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container2">
+        <h1 class="heading1">Professional Skills</h1>
+        <div class="redial-bars">
+          <div class="redial-bar">
+            <svg x="0px" y="0px" viewBox="0 0 200 200">
+              <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+              <circle class="path path-1" cx="100" cy="100" r="80"></circle>
+            </svg>
+            <div class="percentage">80%</div>
+            <div class="text">creativity</div>
+          </div>
+
+          <div class="redial-bar">
+            <svg x="0px" y="0px" viewBox="0 0 200 200">
+              <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+              <circle class="path path-2" cx="100" cy="100" r="80"></circle>
+            </svg>
+            <div class="percentage">80%</div>
+            <div class="text">communication</div>
+          </div>
+
+          <div class="redial-bar">
+            <svg x="0px" y="0px" viewBox="0 0 200 200">
+              <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+              <circle class="path path-3" cx="100" cy="100" r="80"></circle>
+            </svg>
+            <div class="percentage">90%</div>
+            <div class="text">Problem solving</div>
+          </div>
+
+          <div class="redial-bar">
+            <svg x="0px" y="0px" viewBox="0 0 200 200">
+              <circle class="progress-bar" cx="100" cy="100" r="80"></circle>
+              <circle class="path path-4" cx="100" cy="100" r="80"></circle>
+            </svg>
+            <div class="percentage">90%</div>
+            <div class="text">Team Work</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript for Navbar and Progress Bars -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.getElementById("hamburger");
+        const navlist = document.getElementById("navlist");
+
+        hamburger.addEventListener("click", function () {
+          navlist.classList.toggle("active"); // Toggle the 'active' class on the navlist
+        });
+      });
+    </script>
+  </body>
+</html>
