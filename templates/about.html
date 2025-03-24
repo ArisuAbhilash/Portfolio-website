@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me | Abhilash Maurya</title>
+
+    <!-- Stylesheet -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/about.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+
+    <!-- FontAwesome for Icons -->
+    <script
+      src="https://kit.fontawesome.com/your-fontawesome-kit.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Meta Description for SEO -->
+    <meta
+      name="description"
+      content="Learn more about Abhilash Maurya, a passionate developer with expertise in web development, cloud computing, and project management."
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <div class="hamburger" id="hamburger">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <ul class="navlist" id="navlist">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+      <li><a href="{{ url_for('skills') }}">Skills</a></li>
+      <li><a href="{{ url_for('project') }}">Project</a></li>
+      <li><a href="{{ url_for('contact') }}">Contact</a></li>
+    </ul>
+
+    <div class="about-container">
+      <!-- Left Section: Avatar -->
+      <div class="left-section">
+        <div class="avatar-wrapper">
+          <img
+            src="{{ url_for('static', filename='images/avatar.jpg') }}"
+            alt="Abhilash Maurya"
+            class="avatar"
+          />
+          <span class="glow"></span>
+        </div>
+      </div>
+
+      <!-- Right Section: Info -->
+      <div class="right-section">
+        <h1 class="about-heading">About <span> Me..</span></h1>
+        <p class="description">
+          Hi, I am Abhilash Maurya, a B.Tech student in Computer Science and
+          Engineering (AI) at BBD Engineering College, Lucknow. I am passionate
+          about Python development and cloud technologies. Eager to contribute
+          to impactful projects and collaborate in a dynamic team environment
+          while continuing to grow professionally.
+        </p>
+        <button id="read-more-btn">Read More!</button>
+
+        <!-- Extra Info (Initially Hidden) -->
+<div class="extra-info" id="extra-info">
+  <h2 class="section-title">Education</h2> <!-- Added heading -->
+
+  <div class="education">
+      <div class="education-item">
+          <div class="edu-info">
+              <h3>Babu Banarasi Das Engineering College, Lucknow</h3>
+              <p>Bachelors of Technology in Computer Science and Engineering (Artificial Intelligence)</p>
+              <p><strong>Percentage: 76.6</strong> (Average of all semesters)</p>
+          </div>
+          <div class="edu-date">
+              <p>Sep 2022 - Present</p>
+          </div>
+      </div>
+
+      <div class="education-item">
+          <div class="edu-info">
+              <h3>Maharishi Vidya Mandir Sr. Sec. School, Fatehpur</h3>
+              <p>Senior Secondary (Class XII)</p>
+              <p><strong>Percentage: 80</strong></p>
+          </div>
+          <div class="edu-date">
+              <p>Apr 2021 - Mar 2022</p>
+          </div>
+      </div>
+    
+  </div>
+</div>
+
+    <!-- JavaScript -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.getElementById("hamburger");
+        const navlist = document.getElementById("navlist");
+        const readMoreBtn = document.getElementById("read-more-btn");
+        const extraInfo = document.getElementById("extra-info");
+
+        // Toggle mobile navigation menu
+        hamburger.addEventListener("click", function () {
+          navlist.classList.toggle("active");
+        });
+
+        // Toggle Extra Info on "Read More"
+        readMoreBtn.addEventListener("click", function () {
+          extraInfo.classList.toggle("show");
+        });
+      });
+    </script>
+  </body>
+</html>
