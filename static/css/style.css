@@ -347,7 +347,7 @@ button:nth-child(2):hover {
         align-items: center;
         gap: 1.5rem;
         position:absolute;
-        margin-bottom: 18.75rem;
+        padding-bottom: 9rem;
     }
 
     /* Content inside left container */
@@ -359,11 +359,12 @@ button:nth-child(2):hover {
         text-align: center;
         position: absolute; 
         margin-left: 0px;
+        padding-top: 60px;
     }
 
 
     .content .intro {
-        font-size: 1.5rem; /* Adjust the font size */
+        font-size: 1.2rem; /* Adjust the font size */
         color: #fff; /* Set text color */
         font-weight: 500; /* Medium font weight */
          /* Add spacing below */
@@ -377,7 +378,7 @@ button:nth-child(2):hover {
     
 
     .content h1 {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 
 
@@ -394,10 +395,27 @@ button:nth-child(2):hover {
 
     /* Adjust margins and paddings for smaller screens */
     
+    .btn-container button {
+        border: 0.1rem solid #5db9ee;
+        font-size: 1rem;
+        padding:  0.7rem 1.5rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        margin-top: 0.8rem;
+        transition: .5s ease;
+    }
     
 
     .btn-container button {
         margin-top: 1rem;
+    }
+               
+
+    
+    button:nth-child(2) {
+        background: transparent;
+        color: #5DB9EE;
+        
     }
 
     /* Circles resizing for small screens */
@@ -405,4 +423,28 @@ button:nth-child(2):hover {
     .circle:nth-child(2) {
         width: 15rem;
     }
+    
+}
+
+
+button:nth-child(1) {
+    background-color: #5db9ee;
+    color: #262525;
+}
+
+
+button:nth-child(2) {
+    background: transparent;
+    color: #5DB9EE;
+    margin-left: 2rem;
+}
+
+button:nth-child(1):hover {
+    background: transparent;
+    color: #5DB9EE;
+}
+
+button:nth-child(2):hover {
+    background: #5DB9EE;
+    color: #262525;
 }

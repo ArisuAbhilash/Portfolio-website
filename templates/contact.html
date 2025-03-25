@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<!-- *******  Link To CSS Style Sheet  ******* -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+
+	<!-- *******  Font Awesome Icons Link  ******* -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+	<!-- *******  Link To Goggle Fonts  *******  -->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,800;1,900&display=swap"
+		rel="stylesheet">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Contact</title>
+</head>
+
+<body>
+	<div class="hamburger" id="hamburger">
+		<i class="fa-solid fa-bars"></i>
+	</div>
+
+	<ul class="navlist" id="navlist">
+		<li><a href="{{ url_for('home')}}">Home</a></li>
+		<li><a href="{{ url_for('about') }}">About</a></li>
+		<li><a href="{{ url_for ('skills') }}">Skills</a></li>
+		<li><a href="{{ url_for ('project') }}">Project</a></li>
+		<li><a href="{{ url_for('contact') }}" class="active">Contact</a></li>
+	</ul>
+
+	<div class="container">
+		<main class="row">
+
+			<!--  *******   Left Section (Column) Starts   *******  -->
+
+			<section class="col left">
+
+				<!--  *******   Title Starts   *******  -->
+
+				<div class="contactTitle">
+					<h2>Get In Touch</h2>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+				</div>
+
+				<!--  *******   Title Ends   *******  -->
+
+				<!--  *******   Contact Info Starts   *******  -->
+
+				<div class="contactInfo">
+
+					<div class="iconGroup">
+						<div class="icon">
+							<i class="fa-solid fa-phone"></i>
+						</div>
+						<div class="details">
+							<span>Phone</span>
+							<span>+00 110 111 00</span>
+						</div>
+					</div>
+
+					<div class="iconGroup">
+						<div class="icon">
+							<i class="fa-solid fa-envelope"></i>
+						</div>
+						<div class="details">
+							<span>Email</span>
+							<span>name.tutorial@gmail.com</span>
+						</div>
+					</div>
+
+					<div class="iconGroup">
+						<div class="icon">
+							<i class="fa-solid fa-location-dot"></i>
+						</div>
+						<div class="details">
+							<span>Location</span>
+							<span>X Street, Y Road, San Fransisco</span>
+						</div>
+					</div>
+
+				</div>
+
+				<!--  *******   Contact Info Ends   *******  -->
+
+				<!--  *******   Social Media Starts   *******  -->
+
+				<div class="socialMedia">
+					<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+					<a href="#"><i class="fa-brands fa-twitter"></i></a>
+					<a href="#"><i class="fa-brands fa-instagram"></i></a>
+					<a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+				</div>
+
+				<!--  *******   Social Media Ends   *******  -->
+
+			</section>
+
+			<!--  *******   Left Section (Column) Ends   *******  -->
+
+			<!--  *******   Right Section (Column) Starts   *******  -->
+
+			<section class="col right">
+				<!-- Flash Messages for Success/Error -->
+				{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+				{% for category, message in messages %}
+				<p class="{{ category }}">{{ message }}</p>
+				{% endfor %}
+				{% endif %}
+				{% endwith %}
+
+				<form action="{{ url_for('contact') }}" method="POST" class="messageForm">
+					<div class="inputGroup halfWidth">
+
+						<!--  *******   Form Starts   *******  -->
+
+						<form class="messageForm">
+
+							<div class="inputGroup halfWidth">
+								<input type="text" name="name" required="required">
+								<label>Your Name</label>
+							</div>
+
+							<div class="inputGroup halfWidth">
+								<input type="email" name="email" required="required">
+								<label>Email</label>
+							</div>
+
+							<div class="inputGroup fullWidth">
+								<input type="text" name="subject" required="required">
+								<label>Subject</label>
+							</div>
+
+							<div class="inputGroup fullWidth">
+								<textarea name="message" required="required"></textarea>
+								<label>Say Something</label>
+							</div>
+
+							<div class="inputGroup fullWidth">
+								<button>Send Message</button>
+							</div>
+
+						</form>
+
+					
+					</div>	<!--  *******   Form Ends   *******  -->
+			</section>
+
+			<!--  *******   Right Section (Column) Ends   *******  -->
+
+		</main>
+	</div>
+
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+			const hamburger = document.getElementById("hamburger");
+			const navlist = document.getElementById("navlist");
+
+			hamburger.addEventListener("click", function () {
+				navlist.classList.toggle("active"); // Toggle the 'active' class on the navlist
+			});
+		});
+	</script>
+
+
+</body>
+
+</html>
