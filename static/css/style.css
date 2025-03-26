@@ -73,7 +73,7 @@
 }
 
 .right-container {
-    background: linear-gradient(-45deg, #3877ff, #262525 70%);
+    background: linear-gradient(-45deg, cyan, #262525 70%);
     width: 30%;
 }
 
@@ -93,7 +93,7 @@
 }
 
 .content {
-    margin-left: 4rem;
+    margin-left: 3.6rem;
 
 }
 
@@ -105,12 +105,12 @@
 }
 
 .content .intro span {
-    color: #5db9ee;
+    color: cyan;
 }
 
 .content h1 {
     font-size: 4rem;
-    color: #5DB9EE;
+    color: cyan;
 }
 
 
@@ -158,7 +158,7 @@ button:nth-child(2):hover {
 
 .icons .fa-brands:hover {
     cursor: pointer;
-    background: linear-gradient(#fff, #3877ff);
+    background: linear-gradient(#fff, cyan);
     -webkit-text-fill-color: transparent;
 }
 
@@ -174,11 +174,11 @@ button:nth-child(2):hover {
 
 .circle:nth-child(1) {
     background: linear-gradient(90deg, transparent 50%, #262525 -50%);
-    width: 30rem;
+    width: 25rem;
 }
 
 .circle:nth-child(2) {
-    width: 22rem;
+    width: 20rem;
     background-image: url("/static/images/profile.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -186,10 +186,10 @@ button:nth-child(2):hover {
     box-shadow:
         0 0 1rem #fff,
         inset 0 0 1rem #fff,
-        0 0 2rem #3877ff,
-        inset 0 0 2rem #3877ff,
-        0 0 4rem #3877ff,
-        inset 0 0 4rem #3877ff;
+        0 0 2rem cyan,
+        inset 0 0 2rem cyan,
+        0 0 4rem cyan,
+        inset 0 0 4rem cyan;
 
 }
 
@@ -207,7 +207,7 @@ button:nth-child(2):hover {
     gap: 3.5rem;
 }
 
-@media (max-width:1313px) {
+@media (max-width:1240px) {
 
 
     .portfolio-container {
@@ -220,12 +220,16 @@ button:nth-child(2):hover {
     .left-container {
         background-color: #262525;
         width: 100%;
-        padding-left: 3rem;
+        padding-left: 2rem;
     }
     
     .right-container {
-        background: linear-gradient(-45deg, #3877ff, #262525 70%);
+        background: linear-gradient(-45deg, cyan, #262525 70%);
         width: 0%;
+    }
+    .content h1 {
+        font-size: 3.8rem;
+        color: #5DB9EE;
     }
     
     .design .circle {
@@ -243,18 +247,18 @@ button:nth-child(2):hover {
     }
     
     .circle:nth-child(2) {
-        width: 22rem;
-        background-image: url("image.jpg");
+        width: 18rem;
+        background-image: url("/static/images/profile.jpg");
         background-size: 100%;
         background-repeat: no-repeat;
         border: 1rem solid white;
         box-shadow:
             0 0 1rem #fff,
             inset 0 0 1rem #fff,
-            0 0 2rem #3877ff,
-            inset 0 0 2rem #3877ff,
-            0 0 4rem #3877ff,
-            inset 0 0 4rem #3877ff;
+            0 0 2rem cyan,
+            inset 0 0 2rem cyan,
+            0 0 4rem cyan,
+            inset 0 0 4rem cyan;
     
     }   
 
@@ -315,7 +319,7 @@ button:nth-child(2):hover {
         order: 1;
         width: 0%;
         height: 0;
-        background: linear-gradient(-45deg, #3877ff, #262525 70%);
+        background: linear-gradient(-45deg, cyan, #262525 70%);
         padding: 0rem;
     }
 
@@ -364,6 +368,178 @@ button:nth-child(2):hover {
 
 
     .content .intro {
+        font-size: 1.5rem; /* Adjust the font size */
+        color: #fff; /* Set text color */
+        font-weight: 500; /* Medium font weight */
+         /* Add spacing below */
+
+    }
+    
+    .content .intro span {
+        color: #5db9ee; /* Highlight your name with a different color */
+        font-weight: 400; /* Make it bold */
+    }
+    
+
+    .content h1 {
+        font-size:2rem;
+    }
+
+
+    /* Circle design positioning */
+    .design .circle {
+        aspect-ratio: 1;
+        position: absolute;
+        border-radius: 50%;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        background-color: rgba(94, 239, 247, 0.5);
+    }
+
+    /* Adjust margins and paddings for smaller screens */
+    
+    .btn-container button {
+        border: 0.1rem solid cyan;
+        font-size: 1rem;
+        padding:  0.7rem 1.5rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        margin-top: 0.8rem;
+        transition: .5s ease;
+    }
+    
+
+    .btn-container button {
+        margin-top: 1rem;
+    }
+               
+
+    
+    button:nth-child(2) {
+        background: transparent;
+        color: cyan;
+        
+    }
+
+    /* Circles resizing for small screens */
+    .circle:nth-child(1),
+    .circle:nth-child(2) {
+        width: 15rem;
+    }
+    
+}
+
+
+
+@media (max-width: 400px) {
+ 
+
+    .navlist {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background-color: #262525;
+        top: 0;
+        left: -100%; 
+        width: 100%;
+        height: 100vh; /* Full height */
+        z-index: 1000;
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        transition: left 0.5s ease; /* Add smooth transition for sliding */
+    }
+
+    
+    .navlist.active {
+        left: 0; /* Slide it into view from the left */
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+        display: block;
+        font-size: 2rem;
+        color: #e47908;
+        margin-top: 10px;
+		margin-left: 20px;
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        cursor: pointer;
+        z-index: 1001; /* Make sure it stays above the navlist */
+    }
+
+    /* Menu items alignment */
+    .navlist li {
+        list-style: none;
+        margin: 1.rem 0;
+    }
+
+    .navlist li a {
+        color: #ffffff;
+        font-size: 1.5rem;
+        text-decoration: none;
+        text-align: center;
+    }
+    
+    
+    .right-container {
+        order: 1;
+        width: 0%;
+        height: 0;
+        background: linear-gradient(-45deg, cyan, #262525 70%);
+        padding: 0rem;
+    }
+
+
+    
+    .portfolio-container{
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+    }
+
+    .left-container {
+        order: 3;
+        width: 100%;
+        padding-right: 40px;
+        background-color: #262525;
+        text-align: center;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-sizing:content-box;
+    }
+
+    .icons {
+        display:flex;
+        flex-direction:row;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        position:relative; 
+        padding-top: 400px;
+        padding-bottom: 0;
+
+    }
+
+    /* Content inside left container */
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centers vertically */
+        align-items: center; /* Centers horizontally */
+        text-align: center;
+        position: relative; 
+        margin-left: 0px;
+        padding-top: 10px;
+    
+        
+    }
+
+
+    .content .intro {
         font-size: 1.2rem; /* Adjust the font size */
         color: #fff; /* Set text color */
         font-weight: 500; /* Medium font weight */
@@ -382,22 +558,13 @@ button:nth-child(2):hover {
     }
 
 
-    /* Circle design positioning */
-    .design .circle {
-        aspect-ratio: 1;
-        position: absolute;
-        border-radius: 50%;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%, 0);
-        background-color: rgba(56, 119, 255, 0.5);
-    }
+   
 
     /* Adjust margins and paddings for smaller screens */
     
     .btn-container button {
         border: 0.1rem solid #5db9ee;
-        font-size: 1rem;
+        font-size: 0.7rem;
         padding:  0.7rem 1.5rem;
         border-radius: 0.5rem;
         cursor: pointer;
@@ -415,36 +582,13 @@ button:nth-child(2):hover {
     button:nth-child(2) {
         background: transparent;
         color: #5DB9EE;
+        margin-left: 16px;
         
     }
 
     /* Circles resizing for small screens */
     .circle:nth-child(1),
     .circle:nth-child(2) {
-        width: 15rem;
+        width: 14rem;
     }
-    
-}
-
-
-button:nth-child(1) {
-    background-color: #5db9ee;
-    color: #262525;
-}
-
-
-button:nth-child(2) {
-    background: transparent;
-    color: #5DB9EE;
-    margin-left: 2rem;
-}
-
-button:nth-child(1):hover {
-    background: transparent;
-    color: #5DB9EE;
-}
-
-button:nth-child(2):hover {
-    background: #5DB9EE;
-    color: #262525;
 }
