@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Skills</title>
 
-    <!-- Stylesheet -->
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/project.css') }}"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skills</title>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}" />
+  <!-- Boxicons for Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,800;1,900&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <!-- Boxicons for Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css"
-    />
+  <!-- Meta Description for SEO -->
+  <meta name="description"
+    content="Learn more about Abhilash Maurya, a passionate developer with expertise in web development, cloud computing, and project management." 
+  />
+</head>
 
-    <!-- Meta Description for SEO -->
-    <meta
-      name="description"
-      content="Learn more about Abhilash Maurya, a passionate developer with expertise in web development, cloud computing, and project management."
-    />
-  </head>
-  <body>
-    <!-- Navbar -->
+<body>
+  <div class="portfolio-container">
     <div class="hamburger" id="hamburger">
       <i class="fa-solid fa-bars"></i>
     </div>
@@ -58,9 +51,7 @@
                 eaque, dolores ipsam cupiditate non dicta!
               </p>
 
-              <a href="#"
-                ><i class="bx bx-link-external" style="color: aliceblue"></i
-              ></a>
+              <a href="#"><i class="bx bx-link-external" style="color: aliceblue"></i></a>
             </div>
           </div>
 
@@ -75,9 +66,7 @@
                 eaque, dolores ipsam cupiditate non dicta!
               </p>
 
-              <a href="#"
-                ><i class="bx bx-link-external" style="color: aliceblue"></i
-              ></a>
+              <a href="#"><i class="bx bx-link-external" style="color: aliceblue"></i></a>
             </div>
           </div>
 
@@ -92,24 +81,17 @@
                 eaque, dolores ipsam cupiditate non dicta!
               </p>
 
-              <a href="#"
-                ><i class="bx bx-link-external" style="color: aliceblue"></i
-              ></a>
+              <a href="#"><i class="bx bx-link-external" style="color: aliceblue"></i></a>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const hamburger = document.getElementById("hamburger");
-        const navlist = document.getElementById("navlist");
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-        hamburger.addEventListener("click", function () {
-          navlist.classList.toggle("active"); // Toggle the 'active' class on the navlist
-        });
-      });
-    </script>
-  </body>
+</body>
+
+
 </html>

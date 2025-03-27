@@ -1,34 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me | Abhilash Maurya</title>
 
-    <!-- Stylesheet -->
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/about.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Abhilash Maurya</title>
 
-    <!-- FontAwesome for Icons -->
-    <script
-      src="https://kit.fontawesome.com/your-fontawesome-kit.js"
-      crossorigin="anonymous"
-    ></script>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
-    <!-- Meta Description for SEO -->
-    <meta
-      name="description"
-      content="Learn more about Abhilash Maurya, a passionate developer with expertise in web development, cloud computing, and project management."
-    />
-  </head>
-  <body>
-    <!-- Navbar -->
+  <!-- FontAwesome for Icons -->
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+
+  <link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,800;1,900&display=swap"
+		rel="stylesheet">
+
+  <!-- Meta Description for SEO -->
+  <meta name="description"
+    content="Learn more about Abhilash Maurya, a passionate developer with expertise in web development, cloud computing, and project management." />
+</head>
+
+<body>
+  <div class="portfolio-container">
     <div class="hamburger" id="hamburger">
       <i class="fa-solid fa-bars"></i>
     </div>
@@ -44,11 +39,7 @@
       <!-- Left Section: Avatar -->
       <div class="left-section">
         <div class="avatar-wrapper">
-          <img
-            src="{{ url_for('static', filename='images/avatar.jpg') }}"
-            alt="Abhilash Maurya"
-            class="avatar"
-          />
+          <img src="{{ url_for('static', filename='images/avatar.jpg') }}" alt="Abhilash Maurya" class="avatar" />
           <span class="glow"></span>
         </div>
       </div>
@@ -66,53 +57,55 @@
         <button id="read-more-btn">Read More!</button>
 
         <!-- Extra Info (Initially Hidden) -->
-<div class="extra-info" id="extra-info">
-  <h2 class="section-title">Education</h2> <!-- Added heading -->
+        <div class="extra-info" id="extra-info">
+          <h2 class="section-title">Education</h2> <!-- Added heading -->
 
-  <div class="education">
-      <div class="education-item">
-          <div class="edu-info">
-              <h3>Babu Banarasi Das Engineering College, Lucknow</h3>
-              <p>Bachelors of Technology in Computer Science and Engineering (Artificial Intelligence)</p>
-              <p><strong>Percentage: 76.6</strong> (Average of all semesters)</p>
-          </div>
-          <div class="edu-date">
-              <p>Sep 2022 - Present</p>
-          </div>
-      </div>
+          <div class="education">
+            <div class="education-item">
+              <div class="edu-info">
+                <h3>Babu Banarasi Das Engineering College, Lucknow</h3>
+                <p>Bachelors of Technology in Computer Science and Engineering (Artificial Intelligence)</p>
+                <p><strong>Percentage: 76.6</strong> (Average of all semesters)</p>
+              </div>
+              <div class="edu-date">
+                <p>Sep 2022 - Present</p>
+              </div>
+            </div>
 
-      <div class="education-item">
-          <div class="edu-info">
-              <h3>Maharishi Vidya Mandir Sr. Sec. School, Fatehpur</h3>
-              <p>Senior Secondary (Class XII)</p>
-              <p><strong>Percentage: 80</strong></p>
+            <div class="education-item">
+              <div class="edu-info">
+                <h3>Maharishi Vidya Mandir Sr. Sec. School, Fatehpur</h3>
+                <p>Senior Secondary (Class XII)</p>
+                <p><strong>Percentage: 80</strong></p>
+              </div>
+              <div class="edu-date">
+                <p>Apr 2021 - Mar 2022</p>
+              </div>
+            </div>
           </div>
-          <div class="edu-date">
-              <p>Apr 2021 - Mar 2022</p>
-          </div>
+        </div>
       </div>
-    
+    </div>
   </div>
-</div>
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburger = document.getElementById("hamburger");
+      const navlist = document.getElementById("navlist");
+      const readMoreBtn = document.getElementById("read-more-btn");
+      const extraInfo = document.getElementById("extra-info");
 
-    <!-- JavaScript -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const hamburger = document.getElementById("hamburger");
-        const navlist = document.getElementById("navlist");
-        const readMoreBtn = document.getElementById("read-more-btn");
-        const extraInfo = document.getElementById("extra-info");
-
-        // Toggle mobile navigation menu
-        hamburger.addEventListener("click", function () {
-          navlist.classList.toggle("active");
-        });
-
-        // Toggle Extra Info on "Read More"
-        readMoreBtn.addEventListener("click", function () {
-          extraInfo.classList.toggle("show");
-        });
+      // Toggle mobile navigation menu
+      hamburger.addEventListener("click", function () {
+        navlist.classList.toggle("active");
       });
-    </script>
-  </body>
+
+      // Toggle Extra Info on "Read More"
+      readMoreBtn.addEventListener("click", function () {
+        extraInfo.classList.toggle("show");
+      });
+    });
+  </script>
+</body>
+
 </html>

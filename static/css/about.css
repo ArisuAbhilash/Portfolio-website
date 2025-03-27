@@ -1,26 +1,21 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
 
-@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Space+Grotesk:wght@300..700&display=swap');
-
-
-
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
 }
-body {
-    font-family: "Space Grotesk", sans-serif;
+
+.portfolio-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
     background-color:#262525;
     color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+
 }
+
 .navlist {
     display: flex;
     gap: 3.5rem;
@@ -29,7 +24,6 @@ body {
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 0px;
 }
 
 .navlist li {
@@ -63,6 +57,7 @@ body {
 .navlist .active::after {
     transform: scaleX(1);
 }
+
 
 .hamburger {
     display: none;

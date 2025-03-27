@@ -23,6 +23,7 @@
     justify-content: center;
     align-items: center;
     position: fixed;
+    top: 0px;
 }
 
 .navlist li {
@@ -124,7 +125,7 @@
 
 
 .btn-container button {
-    border: 0.1rem solid #5db9ee;
+    border: 0.1rem solid cyan;
     font-size: 1.1rem;
     padding: .7rem 1.5rem;
     border-radius: 0.5rem;
@@ -134,24 +135,24 @@
 }
 
 button:nth-child(1) {
-    background-color: #5db9ee;
+    background-color: cyan;
     color: #262525;
 }
 
 
 button:nth-child(2) {
     background: transparent;
-    color: #5DB9EE;
+    color: cyan;
     margin-left: 2rem;
 }
 
 button:nth-child(1):hover {
     background: transparent;
-    color: #5DB9EE;
+    color: cyan;
 }
 
 button:nth-child(2):hover {
-    background: #5DB9EE;
+    background: cyan;
     color: #262525;
 }
 
@@ -229,7 +230,7 @@ button:nth-child(2):hover {
     }
     .content h1 {
         font-size: 3.8rem;
-        color: #5DB9EE;
+        color: cyan;
     }
     
     .design .circle {
@@ -291,7 +292,7 @@ button:nth-child(2):hover {
     .hamburger {
         display: block;
         font-size: 2rem;
-        color: #e47908;
+        color: cyan;
         margin-top: 10px;
 		margin-left: 20px;
         position: absolute;
@@ -376,7 +377,7 @@ button:nth-child(2):hover {
     }
     
     .content .intro span {
-        color: #5db9ee; /* Highlight your name with a different color */
+        color: cyan; /* Highlight your name with a different color */
         font-weight: 400; /* Make it bold */
     }
     
@@ -548,7 +549,7 @@ button:nth-child(2):hover {
     }
     
     .content .intro span {
-        color: #5db9ee; /* Highlight your name with a different color */
+        color:cyan; /* Highlight your name with a different color */
         font-weight: 400; /* Make it bold */
     }
     
@@ -563,7 +564,7 @@ button:nth-child(2):hover {
     /* Adjust margins and paddings for smaller screens */
     
     .btn-container button {
-        border: 0.1rem solid #5db9ee;
+        border: 0.1rem solid cyan;
         font-size: 0.7rem;
         padding:  0.7rem 1.5rem;
         border-radius: 0.5rem;
@@ -581,7 +582,7 @@ button:nth-child(2):hover {
     
     button:nth-child(2) {
         background: transparent;
-        color: #5DB9EE;
+        color: cyan;
         margin-left: 16px;
         
     }
