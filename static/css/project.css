@@ -26,6 +26,7 @@
     top: 0px;
 }
 
+
 .navlist li {
     list-style: none;
 }
@@ -59,7 +60,7 @@
 }
 
 .hamburger {
-    display:block;
+    display:none;
     cursor: pointer;
     position: absolute;
     top: 1rem;
