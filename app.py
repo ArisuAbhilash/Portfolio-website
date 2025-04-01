@@ -1,17 +1,20 @@
 from flask import Flask, render_template, request, redirect, flash
-import mysql.connector
+import psycopg2
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key"
 
 # Database connection
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="SMau@1",
-    database="contact_form_db"
-)
-cursor = db.cursor()
+def get_db_connection():
+    conn = psycopg2.connect(
+        host="dpg-cvm0flngi27c73ah9li0-a",
+        user="root",
+        password="GSOeyeEkuIsPL6LFnsRPtcfYZAikQLEC",
+        dbname="contact_form_db_he0f",
+        port="5432"
+    )
+        
+    return conn
 
 @app.route('/')
 def home():
@@ -37,13 +40,19 @@ def contact():
         subject = request.form['subject']
         message = request.form['message']
 
+        # Connect to the database and insert contact information
+        conn = get_db_connection()
+        cursor = conn.cursor()
+
         query = "INSERT INTO contacts (name, email, subject, message) VALUES (%s, %s, %s, %s)"
         cursor.execute(query, (name, email, subject, message))
-        db.commit()
+        conn.commit()
+
+        cursor.close()
+        conn.close()
 
         flash('Message sent successfully!', 'success')
         return redirect('/contact')
-
     return render_template('contact.html')
 
 if __name__ == '__main__':
