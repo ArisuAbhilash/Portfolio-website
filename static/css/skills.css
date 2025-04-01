@@ -90,7 +90,7 @@
     margin-top: 10rem;
     align-items: center;
     position: relative;
-    height:100vh;
+    height:fit-content;
     margin-bottom: 20px;
     border: 5px solid #0ef;
     box-shadow: 0px 0px 15px #0ef, 0px 0px 20px #0ef;
@@ -115,7 +115,7 @@
     align-items: center;
     position: relative;
     margin-bottom: 20px;
-    height:100vh;
+    height:fit-content;
     border: 5px solid #0ef;
     box-shadow: 0px 0px 10px #0ef, 0px 0px 20px #0ef;
     animation: pulseBorder 2s infinite alternate;
@@ -139,6 +139,7 @@
     padding-top: 30px;
     width: 60%;
     max-width: 900px;
+    padding-bottom: 35px;
     
 }
 
@@ -287,6 +288,7 @@
     justify-items: center;
     align-items: center;
     padding-top: 100px;
+    padding-bottom: 80px;
 }
 
 .redial-bar {
@@ -435,7 +437,7 @@
         margin-top: 10rem;
         align-items: center;
         position: relative;
-        height:100vh;
+        height:fit-content;
         border: solid 5px #0ef;
         margin-bottom: 20px;
     }
@@ -452,7 +454,7 @@
         position: relative;
         border: solid 5px #0ef;
         margin-bottom: 20px;
-        height:100vh;
+        height:fit-content;
     }
     
     
@@ -472,13 +474,10 @@
         padding-top: 50px;
         width: 60%;
         max-width: 900px;
+        padding-bottom: 30px;
     }   
 
-    .radial-bars .radial-bar {
-        width: 100px;
-        height: 100px;
-        padding-top: 50px;
-    }
+
     
     .redial-bars {
         display: grid;
@@ -487,13 +486,14 @@
         gap: 20px;
         justify-items: center;
         align-items: center;
-        padding-top: 50px;
+        padding-top: 100px;
+        padding-bottom: 90px;
 
     }
     
     .redial-bar {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
         position: relative;
         display: flex;
         justify-content: center;
@@ -515,8 +515,7 @@
 
 
 
-
-@media(max-width: 600px) {
+@media(max-width: 620px) {
 
     .navlist {
         display: flex;
@@ -543,7 +542,7 @@
     .hamburger {
         display: block;
         font-size: 2rem;
-        color: #e47908;
+        color: cyan;
         margin-top: 10px;
         margin-left: 20px;
         position: absolute;
@@ -573,9 +572,11 @@
     }
 
     .container1 {
-        margin-top: 55px;
+        margin-top: 60px;
         width: 100%;
         margin-left: 0px;
+        padding-bottom: 0px;
+        height:fit-content;
     }
 
     .container2 {
@@ -583,6 +584,7 @@
         width: 100%;
         margin-right: 0px;
         margin-left: 0px;
+        height:fit-content;
 
     }
 
@@ -597,16 +599,13 @@
     }
     
     .Technical-bars {
-        padding-top: 30px;
-        width: 60%;
+        padding-top: 50px;
+        width: 70%;
         max-width: 900px;
+        padding-bottom: 30px;
     }   
 
-    .radial-bars .radial-bar {
-        width: 100px;
-        height: 100px;
 
-    }
     .redial-bars {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -614,12 +613,13 @@
         gap: 20px;
         justify-items: center;
         align-items: center;
-        padding-top: 60px;
+        padding-top: 50px;
+        padding-bottom: 30px;
     }
     
     .redial-bar {
-        width: 120px;
-        height: 120px;
+        width: 150px;
+        height: 150px;
         position: relative;
         display: flex;
         justify-content: center;

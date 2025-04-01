@@ -60,7 +60,6 @@ body{
     position: absolute;
     top: 1rem;
     right: 1rem;
-    /* Align it to the right */
 }
 
 .navlist {
@@ -74,7 +73,7 @@ body{
 	justify-content: center;
 	align-items: center;
 	padding-left: 30px;
-	padding-top: 60px;
+	padding-top: 80px;
 	padding-bottom: 30px;
 	padding-right: 30px;
 }
@@ -313,7 +312,7 @@ textarea::-webkit-scrollbar-thumb{
     .hamburger {
         display: block;
         font-size: 2rem;
-        color: #e47908;
+        color: cyan;
         margin-top: 10px;
 		margin-left: 20px;
         position: absolute;
