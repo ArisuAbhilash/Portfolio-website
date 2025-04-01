@@ -73,7 +73,10 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 30px 8%;
+	padding-left: 30px;
+	padding-top: 60px;
+	padding-bottom: 30px;
+	padding-right: 30px;
 }
 .container .row{
 	display: flex;

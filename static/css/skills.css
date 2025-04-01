@@ -1,15 +1,27 @@
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	font-family: 'Poppins', sans-serif;
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+
 }
-body{
-	width: 100%;
-	min-height: 100vh;
-	background-color:#262525;
-	color: white;
+
+.portfolio-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start;
+    gap: 2rem;
+    background-color: #262525;
+    color: #fff;
+    padding: 2rem;
+    box-sizing: border-box;
 }
+
+
 
 .navlist {
     display: flex;
@@ -18,9 +30,10 @@ body{
     width: 100%;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: absolute;
     top: 0px;
 }
+
 
 .navlist li {
     list-style: none;
@@ -60,7 +73,6 @@ body{
     position: absolute;
     top: 1rem;
     right: 1rem;
-    /* Align it to the right */
 }
 
 .navlist {
@@ -69,55 +81,65 @@ body{
 }
 
 
-.skills-section {
-    display: flex;
-    justify-content: space-between; /* Places container1 on left and container2 on right */
-    align-items: center;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    
-}
-
 .container1 {
     width: 50%;
-    padding-left: 3rem;
+    margin-left: 3rem;
     display: flex;
-    flex-direction: column; /* Align items in a column */
-    justify-content: flex-start; /* Move content to the top */
-    margin-top: 16rem;
-
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 10rem;
+    align-items: center;
+    position: relative;
+    height:100vh;
+    margin-bottom: 20px;
+    border: 5px solid #0ef;
+    box-shadow: 0px 0px 15px #0ef, 0px 0px 20px #0ef;
+    animation: pulseBorder 2s infinite alternate;
 }
+@keyframes pulseBorder {
+    0% { border-color: #0ef; box-shadow: 0px 0px 10px #0ef; }
+    25% { border-color: #aaedf6; box-shadow: 0px 0px 15px #84cdec; }
+    50% { border-color: #8beaea; box-shadow: 0px 0px 20px #8ae5f3; }
+    75% { border-color: #51b5c7; box-shadow: 0px 0px 15px #2b6a78; }
+    100% { border-color: #0ef; box-shadow: 0px 0px 10px #0ef; }
+}
+
 .container2 {
     width: 50%;
-    padding-right: 3rem;
-    flex-direction:column; /* Align items in a column */
-    justify-content: flex-start; /* Move content to the top */
-    margin-top: 16rem;
-    flex-wrap: wrap;
-    
-
-}
-
-
-
-.container1, .container2{
-    height: 100vh;
+    margin-top: 10rem;
+    margin-right: 3rem;
+    margin-left: 2.5rem;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    position:relative;
+    position: relative;
+    margin-bottom: 20px;
+    height:100vh;
+    border: 5px solid #0ef;
+    box-shadow: 0px 0px 10px #0ef, 0px 0px 20px #0ef;
+    animation: pulseBorder 2s infinite alternate;
 }
 
-.heading1 { 
 
-    text-decoration: underline;
-    text-underline-offset: 10px;
-    text-decoration-thickness: 5px;
-    margin-bottom: 50px;
+
+.heading1 {
+    padding-bottom: 30px;
+    width: 100%;
+    text-align: center; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    border-bottom: 5px solid #0ef;
+    box-shadow: 0px 0px 10px #0ef, 0px 0px 20px #0ef;
+    animation: pulseBorder 2s infinite alternate;
 }
 
 .Technical-bars {
-    width: 60%; /* Increase width */
-    max-width: 900px; /* Prevent bars from stretching too much */
+    padding-top: 30px;
+    width: 60%;
+    max-width: 900px;
+    
 }
 
 .bar {
@@ -125,7 +147,7 @@ body{
 }
 
 .Technical-bars .bar {
-    margin: 40px 0;
+    margin-top: 20px;
 }
 
 .Technical-bars .bar:first-child {
@@ -137,7 +159,7 @@ body{
 }
 
 .Technical-bars .bar .info {
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
 
 .Technical-bars .bar .info span {
@@ -145,6 +167,7 @@ body{
     font-weight: 500;
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
+    margin-top: 0px;
 }
 
 .Technical-bars .bar .progress-line {
@@ -159,9 +182,10 @@ body{
 }
 
 @keyframes animate {
-    0%{
+    0% {
         transform: scaleX(0);
     }
+
     100% {
         transform: scaleX(1);
     }
@@ -175,11 +199,11 @@ body{
     animation: animate 1s 1s cubic-bezier(1, 0, 0.5, 1) forwards;
     transform: scaleX(0);
     transform-origin: left;
-    
+
 }
 
 .progress-line.html span {
-    width: 90%;
+    width: 85%;
 }
 
 .progress-line.css span {
@@ -187,7 +211,7 @@ body{
 }
 
 .progress-line.javascript span {
-    width: 75%;
+    width: 60%;
 }
 
 .progress-line.python span {
@@ -195,7 +219,7 @@ body{
 }
 
 .progress-line.flask span {
-    width: 70%;
+    width: 85%;
 }
 
 .progress-line span::after {
@@ -212,7 +236,7 @@ body{
 }
 
 .progress-line.html span::after {
-    content: "90%";
+    content: "85%";
 }
 
 .progress-line.css span::after {
@@ -220,7 +244,7 @@ body{
 }
 
 .progress-line.javascript span::after {
-    content: "75%";
+    content: "60%";
 }
 
 .progress-line.python span::after {
@@ -228,7 +252,7 @@ body{
 }
 
 .progress-line.flask span::after {
-    content: "70%";
+    content: "85%";
 }
 
 .progress-line span::before {
@@ -255,27 +279,28 @@ body{
 
 
 
-.radial-bars {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: flex-start;
+.redial-bars {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
     gap: 20px;
-} 
-
-.radial-bars .radial-bar{
-    width: 45%;
-    height: 170px;
-    margin-bottom: 10px;
-    position: relative;
-    display:flex;
-
-   
+    justify-items: center;
+    align-items: center;
+    padding-top: 100px;
 }
 
-.radial-bars .radial-bar svg {
-    position:absolute;
+.redial-bar {
+    width: 150px;
+    height: 150px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.radial-bar svg {
+    position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-90deg);
@@ -284,7 +309,7 @@ body{
 
 }
 
-.radial-bars .radial-bar .progress-bar {
+.progress-bar {
     stroke-width: 10;
     stop-color: rgb(240, 235, 235);
     fill: transparent;
@@ -308,64 +333,71 @@ body{
 }
 
 .path {
-    fill:none;
-    stroke: rgb(7, 180, 168); /* Active progress color */
+    fill: none;
     stroke-width: 10;
     stroke-linecap: round;
-    stroke-dasharray: 502; /* Full circumference */
-    stroke-dashoffset: 502; /* Start as empty */
+    stroke-dasharray: 502;
+    stroke-dashoffset: 502;
     animation: animate-progress 1s linear forwards;
     opacity: 1;
-    
+
 }
 
 
 
 .path-1 {
     animation: animate-path1 1s 1s linear forwards;
+    stroke: red;
 }
 
 .path-2 {
     animation: animate-path2 1s 1s linear forwards;
+    stroke:green;
 }
 
 .path-3 {
     animation: animate-path3 1s 1s linear forwards;
+    stroke: rgb(247, 154, 4);
 }
 
 .path-4 {
     animation: animate-path4 1s 1s linear forwards;
+    stroke: blue;
 }
 
 
 
 @keyframes animate-path1 {
     100% {
-        stroke-dashoffset: 63;;
+        stroke-dashoffset: 35;
+        ;
     }
 }
 
 @keyframes animate-path2 {
     100% {
-        stroke-dashoffset: 31;;
+        stroke-dashoffset: 50;
+        ;
     }
 }
 
 @keyframes animate-path3 {
     100% {
-        stroke-dashoffset: 125;;
+        stroke-dashoffset: 50;
+        ;
     }
 }
 
 @keyframes animate-path4 {
     100% {
-        stroke-dashoffset: 75;;
+        stroke-dashoffset: 35;
+        ;
     }
 }
 
 
 
-.radial-bar .percentage {
+.percentage {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -377,60 +409,151 @@ body{
 }
 
 
-.radial-bar .text {
+.text {
     width: 100%;
     position: absolute;
     text-align: center;
     left: 50%;
-    bottom: -5px;
+    bottom: -15px;
     transform: translateX(-50%);
-    font-size: 17px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 200;
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
 }
 
 
+@media(max-width: 900px) {
+
+
+    .container1 {
+        width: 50%;
+        margin-left: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin-top: 10rem;
+        align-items: center;
+        position: relative;
+        height:100vh;
+        border: solid 5px #0ef;
+        margin-bottom: 20px;
+    }
+    
+    .container2 {
+        width: 50%;
+        margin-top: 10rem;
+        margin-right: 1.5rem;
+        margin-left: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        border: solid 5px #0ef;
+        margin-bottom: 20px;
+        height:100vh;
+    }
+    
+    
+
+    .heading1 {
+        padding-bottom: 30px;
+        border-bottom: solid 5px #0ef;
+        width: 100%;
+        text-align: center; 
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        font-size: 25px;
+    }
+    
+    .Technical-bars {
+        padding-top: 50px;
+        width: 60%;
+        max-width: 900px;
+    }   
+
+    .radial-bars .radial-bar {
+        width: 100px;
+        height: 100px;
+        padding-top: 50px;
+    }
+    
+    .redial-bars {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 20px;
+        justify-items: center;
+        align-items: center;
+        padding-top: 50px;
+
+    }
+    
+    .redial-bar {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .radial-bar svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        width: 140px;
+        height: 150px;
+    
+    }
+
+}
 
 
 
-@media(max-width: 1047px){
 
-	.navlist {
+@media(max-width: 600px) {
+
+    .navlist {
         display: flex;
         flex-direction: column;
         position: absolute;
         background-color: #262525;
         top: 0;
-        left: -100%; 
+        left: -100%;
         width: 100%;
-        height: 100vh; /* Full height */
+        height: 100vh;
         z-index: 1000;
-        justify-content: center; /* Center items vertically */
-        align-items: center; /* Center items horizontally */
-        transition: left 0.5s ease; /* Add smooth transition for sliding */
+        justify-content: center;
+        align-items: center;
+        transition: left 0.5s ease;
+        
     }
 
-    
+
     .navlist.active {
-        left: 0; /* Slide it into view from the left */
+        left: 0;
     }
 
-    /* Hamburger Menu */
+  
     .hamburger {
         display: block;
         font-size: 2rem;
         color: #e47908;
         margin-top: 10px;
-		margin-left: 20px;
+        margin-left: 20px;
         position: absolute;
         top: 1rem;
         left: 1rem;
         cursor: pointer;
-        z-index: 1001; /* Make sure it stays above the navlist */
+        z-index: 1001;
     }
 
-    /* Menu items alignment */
+    
     .navlist li {
         list-style: none;
         margin: 1.rem 0;
@@ -442,62 +565,77 @@ body{
         text-decoration: none;
         text-align: center;
     }
-    
 
-    .skills-section {
+
+    .portfolio-container {
         flex-direction: column;
         align-items: center;
     }
 
-    .container1, .container2 {
+    .container1 {
+        margin-top: 55px;
         width: 100%;
-        padding: 1rem;
-    
+        margin-left: 0px;
     }
 
-    .container1{
-        margin-top:55px;
-    }
-
-    .container2{
+    .container2 {
         margin-top: 20px;
+        width: 100%;
+        margin-right: 0px;
+        margin-left: 0px;
 
     }
 
-    .radial-bars .radial-bar {
-        width: 100px;
-        height: 100px;
-    }
-
-}
-
- 
-    
-@media (max-width:1200px) {
-    .skills-section {
-        flex-direction: column;
+    .heading1 {
+        padding-bottom: 30px;
+        border-bottom: solid 5px #0ef;
+        width: 100%;
+        text-align: center; /* Text ko center mein lane ke liye */
+        display: flex;
+        justify-content: center; /* Flex items ko center karne ke liye */
         align-items: center;
     }
-
-    .container1, .container2 {
-        width: 100%;
-        padding: 1rem;
     
-    }
-
-    .container1{
-        margin-top:80px;
-    }
-
-    .container2{
-        margin-top: 20px;
-
-    }
+    .Technical-bars {
+        padding-top: 30px;
+        width: 60%;
+        max-width: 900px;
+    }   
 
     .radial-bars .radial-bar {
         width: 100px;
         height: 100px;
+
+    }
+    .redial-bars {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        gap: 20px;
+        justify-items: center;
+        align-items: center;
+        padding-top: 60px;
     }
     
+    .redial-bar {
+        width: 120px;
+        height: 120px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .radial-bar svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-90deg);
+        width: 140px;
+        height: 150px;
+    
+    }
 
 }
+

@@ -22,7 +22,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
-    position: fixed;
+    position: absolute;
     top: 0px;
 }
 
@@ -115,7 +115,7 @@
 }
 
 .row img {
-    width: 350px;
+    width: 400px;
     height: 250px;
     border-radius: 8px;
     display: block;
@@ -144,26 +144,26 @@
 
 .layer h5{
     color:#fff;
-    font-size: 10px;
-    font-weight:600;
-    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight:500;
+    margin-bottom: 8px;
 
 }
 
 .layer p{
     color:#fff;
-    font-size:10px;
-    line-height: 1.8;
+    font-size:12px;
+    line-height: 1.2;
 
 }
 
 .layer i{
     color: #e47908;
-    margin-top:20px;
+    margin-top:14px;
     font-size:15px;
     background:#0ef;
-    width: 60px;
-    height:60px;
+    width: 50px;
+    height:50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,7 +179,7 @@
 }
 
 
-@media(max-width: 1047px){
+@media(max-width: 600px){
 
 	.navlist {
         display: flex;
@@ -189,19 +189,19 @@
         top: 0;
         left: -100%; 
         width: 100%;
-        height: 100vh; /* Full height */
+        height: 100vh; 
         z-index: 1000;
-        justify-content: center; /* Center items vertically */
-        align-items: center; /* Center items horizontally */
-        transition: left 0.5s ease; /* Add smooth transition for sliding */
+        justify-content: center; 
+        align-items: center; 
+        transition: left 0.5s ease;
     }
 
     
     .navlist.active {
-        left: 0; /* Slide it into view from the left */
+        left: 0; 
     }
 
-    /* Hamburger Menu */
+    
     .hamburger {
         display: block;
         font-size: 2rem;
@@ -212,10 +212,10 @@
         top: 1rem;
         left: 1rem;
         cursor: pointer;
-        z-index: 1001; /* Make sure it stays above the navlist */
+        z-index: 1001; 
     }
 
-    /* Menu items alignment */
+    
     .navlist li {
         list-style: none;
         margin: 1.rem 0;
@@ -229,7 +229,15 @@
     }
 
     .main-text{
-        margin-top: 100px;
+        padding-top:80px;
+        padding-bottom: 20px;
+    
+    }
+    .main-text h2{
+        font-size:40px;
+        line-height: 1;
+        text-align: center;
+        margin-bottom: 20px;
     
     }
 }    
