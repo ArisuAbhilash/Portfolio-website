@@ -13,12 +13,12 @@ app.secret_key = 'your_secret_key'  # Load the secret key from .env
 def get_db_connection():
     try:
         conn = psycopg2.connect(
-            host=os.getenv("host"),
-            user=os.getenv("user"),
-            password=os.getenv("password"),
-            dbname=os.getenv("dbname"),
-            port="5432",
-        )
+        host=os.getenv("DB_HOST"),  
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        dbname=os.getenv("DB_NAME"),
+        port=os.getenv("DB_PORT"),
+)
         return conn
     except psycopg2.OperationalError as e:
         print("❌ Database Connection Failed:", e)
