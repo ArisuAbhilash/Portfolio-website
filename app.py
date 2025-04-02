@@ -3,26 +3,27 @@ import psycopg2
 from dotenv import load_dotenv
 import os
 
+# Load environment variables
 load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = os.getenv("SECRET_KEY")  # Load the secret key from .env
 
-# Database connection
+# Database connection function
 def get_db_connection():
     try:
         conn = psycopg2.connect(
-        host=os.getenv("host"),
-        user=os.getenv("user"),
-        password=os.getenv("password"),
-        dbname=os.getenv("dbname"),
-        port=int(os.getenv("port")),
+            host=os.getenv("host"),
+            user=os.getenv("user"),
+            password=os.getenv("password"),
+            dbname=os.getenv("dbname"),
+            port=int(os.getenv("port")),
         )
         return conn
     except psycopg2.OperationalError as e:
         print("❌ Database Connection Failed:", e)
-        return None
-    
+        return None  # Return None to handle the failure gracefully
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -47,47 +48,38 @@ def contact():
         subject = request.form['subject']
         message = request.form['message']
 
-        # Connect to the database and insert contact information
+        # Connect to the database
         conn = get_db_connection()
         if conn is None:
-            flash('⚠️ There was an error processing your request.'
-            '\n Please reach out via: \n'
-            '📧 arisuconnect@gmail.com \n 📞 +91-6306181422.', 'danger')
+            flash("⚠️ Database is currently unavailable. Please contact us via:\n📧 arisuconnect@gmail.com\n📞 +91-6306181422.", 'danger')
+            return redirect('/contact')
 
         try:
             cursor = conn.cursor()
-
             query = "INSERT INTO contacts (name, email, subject, message) VALUES (%s, %s, %s, %s)"
             cursor.execute(query, (name, email, subject, message))
             conn.commit()
 
-            cursor.close()
-            conn.close()
+            flash('✅ Message sent successfully!', 'success')
 
         except psycopg2.Error as e:
             print("❌ Database Query Failed:", e)
-            flash('⚠️ There was an error processing your request.'
-            '\n Please reach out via: \n'
-            '📧 arisuconnect@gmail.com \n 📞 +91-6306181422.', 'danger')
-       
+            flash("⚠️ There was an error processing your request. Please contact us via:\n📧 arisuconnect@gmail.com\n📞 +91-6306181422.", 'danger')
+
         finally:
             if conn:
+                cursor.close()
                 conn.close()
-                flash('Message sent successfully!', 'success')
+
         return redirect('/contact')
-    
+
     return render_template('contact.html')
 
-# Custom error handler for 502 and other errors
-@app.errorhandler(502)
+# Custom error handler for 500 errors
 @app.errorhandler(500)
-@app.errorhandler(Exception)
-def handle_error(e):
-    print(f"❌ Server Error: {e}")  # Log the error for debugging
-    return render_template("error.html"), 500  # Show custom error page
-
-
-
+def handle_internal_server_error(e):
+    print(f"❌ Internal Server Error: {e}")  # Log error for debugging
+    return render_template("{{ url_for('error') }}"), 500  # Custom error page
 
 if __name__ == '__main__':
     app.run(debug=True)
