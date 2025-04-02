@@ -7,7 +7,7 @@ import os
 load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = os.getenv("SECRET_KEY")  # Load the secret key from .env
+app.secret_key = 'your_secret_key'  # Load the secret key from .env
 
 # Database connection function
 def get_db_connection():
@@ -17,7 +17,7 @@ def get_db_connection():
             user=os.getenv("user"),
             password=os.getenv("password"),
             dbname=os.getenv("dbname"),
-            port=int(os.getenv("port")),
+            port="5432",
         )
         return conn
     except psycopg2.OperationalError as e:
