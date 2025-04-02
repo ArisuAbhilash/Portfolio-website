@@ -57,7 +57,7 @@ def contact():
         # Connect to the database
         conn = get_db_connection()
         if conn is None:
-            flash("⚠️ Database is currently unavailable. Please contact us via:\n📧 arisuconnect@gmail.com\n📞 +91-6306181422.", 'danger')
+            flash("⚠️ Database is currently unavailable. Please contact us via:\n📧 arisuconnect@gmail.com \n📞 +91-6306181422.", 'danger')
             return redirect('/contact')
 
         try:
@@ -70,7 +70,7 @@ def contact():
 
         except psycopg2.Error as e:
             print("❌ Database Query Failed:", e)
-            flash("⚠️ There was an error processing your request. Please contact us via:\n📧 arisuconnect@gmail.com\n📞 +91-6306181422.", 'danger')
+            flash("⚠️ There was an error processing your request. Please contact us via:\n 📧 arisuconnect@gmail.com \n 📞 +91-6306181422.", 'danger')
 
         finally:
             if conn:
