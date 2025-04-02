@@ -79,7 +79,7 @@ def contact():
 @app.errorhandler(500)
 def handle_internal_server_error(e):
     print(f"❌ Internal Server Error: {e}")  # Log error for debugging
-    return render_template("error"), 500  # Custom error page
+    return render_template("error.html"), 500  # Custom error page
 
 if __name__ == '__main__':
     app.run(debug=True)
