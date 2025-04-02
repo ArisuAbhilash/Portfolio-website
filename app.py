@@ -9,12 +9,11 @@ app.secret_key = 'your_secret_key'  # Load the secret key from .env
 load_dotenv()
 
 # Fetch environment variables
-host = os.getenv("DB_HOST")  
+host = "dpg-cvm0flngi27c73ah9li0-a.singapore-postgres.render.com" 
 dbname = os.getenv("DB_NAME")
 user = os.getenv("DB_USER")
 password = os.getenv("DB_PASSWORD")
 port = os.getenv("DB_PORT")
-
 # Database connection function
 def get_db_connection():
     try:
@@ -23,7 +22,7 @@ def get_db_connection():
         dbname=dbname,
         user=user,
         password=password,
-        port=5432
+        port=port
         )
         return conn
     except psycopg2.OperationalError as e:
