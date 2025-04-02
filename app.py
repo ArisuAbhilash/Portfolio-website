@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request, redirect, flash
 import psycopg2
+from dotenv import load_dotenv
+import os
 
+# Load environment variables
+load_dotenv()
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Load the secret key from .env
@@ -9,11 +13,11 @@ app.secret_key = 'your_secret_key'  # Load the secret key from .env
 def get_db_connection():
     try:
         conn = psycopg2.connect(
-        host="dpg-cvm0flngi27c73ah9li0-a",  
-        user="root",
-        password="GSOeyeEkuIsPL6LFnsRPtcfYZAikQLEC",
-        dbname="contact_form_db_he0f",
-        port="5432",
+        host=os.getenv("DB_HOST"),  
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        dbname=os.getenv("DB_NAME"),
+        port=os.getenv("DB_PORT"),
 )
         return conn
     except psycopg2.OperationalError as e:
@@ -47,7 +51,7 @@ def contact():
         # Connect to the database
         conn = get_db_connection()
         if conn is None:
-            flash("⚠️ Database is currently unavailable. Please contact us via:\n📧arisuconnect@gmail.com\n📞 +91-6306181422.", 'danger')
+            flash("⚠️ Database is currently unavailable. Please contact us via:\n📧 arisuconnect@gmail.com\n📞 +91-6306181422.", 'danger')
             return redirect('/contact')
 
         try:
@@ -60,7 +64,7 @@ def contact():
 
         except psycopg2.Error as e:
             print("❌ Database Query Failed:", e)
-            flash("⚠️ There was an error processing your request. Please contact us via:\n📧arisuconnect@gmail.com \n📞 +91-6306181422.", 'danger')
+            flash("⚠️ There was an error processing your request. Please contact us via:\n📧 arisuconnect@gmail.com\n📞 +91-6306181422.", 'danger')
 
         finally:
             if conn:
