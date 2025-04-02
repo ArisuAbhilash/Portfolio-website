@@ -23,7 +23,7 @@ def get_db_connection():
         dbname=dbname,
         user=user,
         password=password,
-        port=port
+        port=5432
         )
         return conn
     except psycopg2.OperationalError as e:
