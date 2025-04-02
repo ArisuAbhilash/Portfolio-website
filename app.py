@@ -1,18 +1,22 @@
 from flask import Flask, render_template, request, redirect, flash
 import psycopg2
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key"
+app.secret_key = os.getenv("SECRET_KEY")  # Load the secret key from .env
 
 # Database connection
 def get_db_connection():
     try:
         conn = psycopg2.connect(
-        host="dpg-cvm0flngi27c73ah9li0-a",
-        user="root",
-        password="GSOeyeEkuIsPL6LFnsRPtcfYZAikQLEC",
-        dbname="contact_form_db_he0f",
-        port="5432",
+        host=os.getenv("host"),
+        user=os.getenv("user"),
+        password=os.getenv("password"),
+        dbname=os.getenv("dbname"),
+        port=int(os.getenv("port")),
         )
         return conn
     except psycopg2.OperationalError as e:
