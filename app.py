@@ -3,22 +3,28 @@ import psycopg2
 from dotenv import load_dotenv
 import os
 
-# Load environment variables
-load_dotenv()
-
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Load the secret key from .env
+
+load_dotenv()
+
+# Fetch environment variables
+host = os.getenv("DB_HOST")  
+dbname = os.getenv("DB_NAME")
+user = os.getenv("DB_USER")
+password = os.getenv("DB_PASSWORD")
+port = os.getenv("DB_PORT")
 
 # Database connection function
 def get_db_connection():
     try:
         conn = psycopg2.connect(
-        host=os.getenv("DB_HOST"),  
-        user=os.getenv("DB_USER"),
-        password=os.getenv("DB_PASSWORD"),
-        dbname=os.getenv("DB_NAME"),
-        port=os.getenv("DB_PORT"),
-)
+        host=host,
+        dbname=dbname,
+        user=user,
+        password=password,
+        port=port
+        )
         return conn
     except psycopg2.OperationalError as e:
         print("❌ Database Connection Failed:", e)
