@@ -9,7 +9,7 @@ app.secret_key = 'your_secret_key'  # Load the secret key from .env
 load_dotenv()
 
 # Fetch environment variables
-host = "dpg-cvm0flngi27c73ah9li0-a.singapore-postgres.render.com" 
+host = os.getenv("DB_HOST")  
 dbname = os.getenv("DB_NAME")
 user = os.getenv("DB_USER")
 password = os.getenv("DB_PASSWORD")
