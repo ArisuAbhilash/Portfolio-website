@@ -14,6 +14,8 @@ dbname = os.getenv("DB_NAME")
 user = os.getenv("DB_USER")
 password = os.getenv("DB_PASSWORD")
 port = os.getenv("DB_PORT")
+phone_no = os.getenv("PHONE_NUMBER")
+email_id = os.getenv("EMAIL")
 # Database connection function
 def get_db_connection():
     try:
@@ -56,7 +58,7 @@ def contact():
         # Connect to the database
         conn = get_db_connection()
         if conn is None:
-            flash("⚠️ Database is currently unavailable. Please contact us via:\n📧 arisuconnect@gmail.com \n📞 +91-6306181422.", 'danger')
+            flash("⚠️ Database is currently unavailable. Please contact us via: \n📧{{email_id}}  \n📞 {{phone_no}}.", 'danger')
             return redirect('/contact')
 
         try:
@@ -69,7 +71,7 @@ def contact():
 
         except psycopg2.Error as e:
             print("❌ Database Query Failed:", e)
-            flash("⚠️ There was an error processing your request. Please contact us via:\n 📧 arisuconnect@gmail.com \n 📞 +91-6306181422.", 'danger')
+            flash("⚠️ There was an error processing your request. Please contact us via:\n📧{{email_id}}  \n📞 {{phone_no}}.", 'danger')
 
         finally:
             if conn:
@@ -78,7 +80,7 @@ def contact():
 
         return redirect('/contact')
 
-    return render_template('contact.html')
+    return render_template('contact.html',phone_no=phone_no, email_id=email_id)
 
 # Custom error handler for 500 errors
 @app.errorhandler(500)
