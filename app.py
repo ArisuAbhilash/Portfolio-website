@@ -28,7 +28,7 @@ def get_db_connection():
         )
         return conn
     except psycopg2.OperationalError as e:
-        print("❌ Database Connection Failed:", e)
+        print("Database Connection Failed:", e)
         return None  # Return None to handle the failure gracefully
 
 @app.route('/')
@@ -58,7 +58,7 @@ def contact():
         # Connect to the database
         conn = get_db_connection()
         if conn is None:
-            flash("⚠️ Database is currently unavailable. Please contact us via: \n📧{{email_id}}  \n📞 {{phone_no}}.", 'danger')
+            flash("Database is currently unavailable. Please contact us via: \n📧{{email_id}}  \n📞 {{phone_no}}.", 'danger')
             return redirect('/contact')
 
         try:
@@ -67,11 +67,11 @@ def contact():
             cursor.execute(query, (name, email, subject, message))
             conn.commit()
 
-            flash('✅ Message sent successfully!', 'success')
+            flash('Message sent successfully!', 'success')
 
         except psycopg2.Error as e:
-            print("❌ Database Query Failed:", e)
-            flash("⚠️ There was an error processing your request. Please contact us via:\n📧{{email_id}}  \n📞 {{phone_no}}.", 'danger')
+            print(" Database Query Failed:", e)
+            flash("There was an error processing your request. Please contact us via:\n📧{{email_id}}  \n📞 {{phone_no}}.", 'danger')
 
         finally:
             if conn:
@@ -85,7 +85,7 @@ def contact():
 # Custom error handler for 500 errors
 @app.errorhandler(500)
 def handle_internal_server_error(e):
-    print(f"❌ Internal Server Error: {e}")  # Log error for debugging
+    print(f"Internal Server Error: {e}")  # Log error for debugging
     return render_template("error.html"), 500  # Custom error page
 
 if __name__ == '__main__':
